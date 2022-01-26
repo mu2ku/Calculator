@@ -1,11 +1,12 @@
-import './App.css';
+import React from 'react';
+import Screen from '../../components/Screen/Screen';
+import Keypad from '../../components/Keypad/Keypad';
 
 function App() {
   return (
     <>
-      <div>
-        <h1>Working</h1>
-      </div>
+      <Screen />
+      <Keypad />
     </>
   );
 }
