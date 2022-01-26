@@ -1,12 +1,15 @@
 import React from 'react';
-import {styles} from '../Keypad/Keypad.module.css'
+import styles from '../Keypad/Keypad.module.css'
 
 const Keypad = () => {
-  return ( 
+  return (  
     <>
-      <h1>Working</h1>
+      <div className={styles.keypad_wrapper}>
+        <div className={styles.keypad}>
+        </div>
+      </div>
     </>
-   );
+  );
 }
  
 export default Keypad;
