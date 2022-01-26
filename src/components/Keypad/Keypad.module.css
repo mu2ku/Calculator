@@ -2,4 +2,14 @@
   background-color: rgb(245, 245, 245);
   width: 56vw;
   height: 18vw;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc_button {
+  width: 7vw;
+  height: 3vw;
+  margin: 2px;
 }

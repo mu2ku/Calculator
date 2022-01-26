@@ -6,6 +6,7 @@ const Screen = () => {
     <>
       <div className={styles.screen_wrapper}>
         <div className={styles.screen}>
+          Test Test Test Test
         </div>
       </div>
     </>

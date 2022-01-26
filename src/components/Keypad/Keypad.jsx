@@ -8,7 +8,12 @@ const Keypad = (props) => {
       <div className={styles.keypad_wrapper}>
         <div className={styles.keypad}>
           {props.calcItems.map((calcItem, idx) => 
-            <button key={idx}>{calcItem.symbol}</button>
+            <button 
+              key={idx}
+              className={styles.calc_button}
+            >
+              {calcItem.symbol}
+            </button>
           )} 
         </div>
       </div>
