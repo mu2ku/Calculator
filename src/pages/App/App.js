@@ -40,10 +40,12 @@ function App() {
     {name: "Minus", symbol: <>&#8722;</>},
     {name: "Plus", symbol: <>&#43;</>},
   ])
+
+  const [sum, setSum] = useState(0)
   
   return (
     <>
-      <Calculator calcItems={calcItems} />
+      <Calculator calcItems={calcItems} sum={sum} setSum={setSum} />
     </>
   );
 }

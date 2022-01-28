@@ -4,11 +4,15 @@ import Screen from '../Screen/Screen';
 import Keypad from '../Keypad/Keypad';
 
 const Calculator = (props) => {
-  const [num, setNum] = useState()
+  const [num, setNum] = useState(props.sum)
 
   const handleClick = (evt) => {
-    setNum(evt)
+    props.setSum((props.sum *10)+evt)
   }
+
+  useEffect(()=>{
+    setNum(props.sum)
+  },[props.sum])
 
   return ( 
     <>
