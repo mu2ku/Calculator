@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from '../Screen/Screen.module.css'
 
-const Screen = () => {
+const Screen = (props) => {
+
   return ( 
     <>
       <div className={styles.screen_wrapper}>
         <div className={styles.screen}>
-          Test Test Test Test
+          {props.num}
         </div>
       </div>
     </>

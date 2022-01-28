@@ -6,6 +6,7 @@
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
+  margin: 0 0 10px 0;
 }
 
 .calc_button {
