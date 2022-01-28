@@ -7,7 +7,7 @@ const Screen = (props) => {
     <>
       <div className={styles.screen_wrapper}>
         <div className={styles.screen}>
-          {props.num}
+          {props.sum}
         </div>
       </div>
     </>
