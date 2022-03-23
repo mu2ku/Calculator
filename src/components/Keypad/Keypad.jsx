@@ -30,6 +30,39 @@ const Keypad = (props) => {
       props.setCalc(0)
       props.setSym(0)
     } 
+
+    if(evt.target.id === "-") {
+      if(props.run.length !== 0) {
+        props.setRun([props.run[0]-props.calc,...props.run])
+      } else {
+        props.setRun([props.calc,...props.run])
+      }
+      props.setInput(["-",props.sym, ...props.input])
+      props.setCalc(0)
+      props.setSym(0)
+    } 
+
+    if(evt.target.id === "*") {
+      if(props.run.length !== 0) {
+        props.setRun([props.run[0]*props.calc,...props.run])
+      } else {
+        props.setRun([props.calc,...props.run])
+      }
+      props.setInput(["*",props.sym, ...props.input])
+      props.setCalc(0)
+      props.setSym(0)
+    } 
+
+    if(evt.target.id === "/") {
+      if(props.run.length !== 0) {
+        props.setRun([props.run[0]/props.calc,...props.run])
+      } else {
+        props.setRun([props.calc,...props.run])
+      }
+      props.setInput([<>&#247;</>,props.sym, ...props.input])
+      props.setCalc(0)
+      props.setSym(0)
+    } 
   }
 
   return (  
