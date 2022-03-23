@@ -7,7 +7,12 @@ const Screen = (props) => {
     <>
       <div className={styles.screen_wrapper}>
         <div className={styles.screen}>
-          {props.sum}
+          <div className={styles.screen_inputs}>
+            {[...props.input].reverse()}
+          </div>
+          <div className={styles.screen_answer}>
+            {props.run[0]}
+          </div>
         </div>
       </div>
     </>

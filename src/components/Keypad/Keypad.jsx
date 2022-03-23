@@ -5,41 +5,31 @@ const Keypad = (props) => {
   
   const handleKey = (evt) => {
     let key = evt.target.innerHTML
-    console.log(key)
     
     if(parseInt(key) || parseInt(key) === 0) {
       props.handleClick(parseInt(key))
-      console.log(key)
     } else {
       props.handleClick(evt.target.id)
     }
 
-    //Reset sum to 0 and test to empty array
+    //Reset sum to 0 and run to empty array
     if(key === "AC") {
-      props.setSum(0)
-      props.setTest([])
+      props.setCalc(0)
+      props.setSym(0)
+      props.setRun([])
+      props.setInput([])
     }
     
-    if(evt.target.id === "Plus") {
-      if(props.test.length !== 0) {props.setTest([props.sum+props.test[0],...props.test])}
-      else {props.setTest([props.sum,...props.test])}
-      props.setSum(0)
+    if(evt.target.id === "+") {
+      if(props.run.length !== 0) {
+        props.setRun([props.calc+props.run[0],...props.run])
+      } else {
+        props.setRun([props.calc,...props.run])
+      }
+      props.setInput(["+",props.sym, ...props.input])
+      props.setCalc(0)
+      props.setSym(0)
     } 
-    
-    else if(evt.target.id === "Minus"){
-      if(props.test.length !== 0) {props.setTest([props.test[0]-props.sum,...props.test])}
-      else {props.setTest([props.sum,...props.test])}
-      props.setSum(0)
-    } else if(evt.target.id === "Equals"){
-      if(props.status === "Plus") {
-        props.setSum(props.test[0]+props.sum)
-        props.setTest([props.test[0]+props.sum])
-      }
-      if(props.status === "Minus") {
-        props.setSum(props.test[0]-props.sum)
-        props.setTest([props.test[0]-props.sum])
-      }
-    }
   }
 
   return (  
@@ -51,7 +41,7 @@ const Keypad = (props) => {
               key={idx}
               className={styles.calc_button}
               onClick={handleKey}
-              id={calcItem.name}
+              id={calcItem.formula}
             >
               {calcItem.symbol}
             </button>
