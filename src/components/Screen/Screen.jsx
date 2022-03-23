@@ -7,12 +7,13 @@ const Screen = (props) => {
     <>
       <div className={styles.screen_wrapper}>
         <div className={styles.screen}>
-          <div className={styles.screen_inputs}>
+          {(props.status !== "Answer") ? 
+          (<div className={styles.screen_inputs}>
             {[...props.input].reverse()}
-          </div>
-          <div className={styles.screen_answer}>
+          </div>) : 
+          (<div className={styles.screen_answer}>
             {props.run[0]}
-          </div>
+          </div>)}
         </div>
       </div>
     </>

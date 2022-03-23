@@ -11,8 +11,8 @@ const Calculator = (props) => {
     if(Number.isInteger(evt)) {
       props.setCalc((props.calc *10)+evt)
       props.setSym((props.sym *10)+evt)
-    } else {
-      props.setInput()
+    } else if (evt === "=") {
+      setStatus("Answer")
     }
   }
 
@@ -20,8 +20,8 @@ const Calculator = (props) => {
     <>
       <div className={styles.wrapper}>
         <div className={styles.calculator}>
-          <Screen input={props.input} run={props.run} />
-          <Keypad status={status} calcItems={props.calcItems} handleClick={handleClick} setCalc={props.setCalc} calc={props.calc} run={props.run} setRun={props.setRun} input={props.input} setInput={props.setInput} sym={props.sym} setSym={props.setSym} />
+          <Screen input={props.input} run={props.run} status={status} />
+          <Keypad status={status} setStatus={setStatus} calcItems={props.calcItems} handleClick={handleClick} setCalc={props.setCalc} calc={props.calc} run={props.run} setRun={props.setRun} input={props.input} setInput={props.setInput} sym={props.sym} setSym={props.setSym} />
         </div>
       </div>
     </>

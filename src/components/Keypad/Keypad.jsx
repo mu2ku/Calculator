@@ -18,6 +18,7 @@ const Keypad = (props) => {
       props.setSym(0)
       props.setRun([])
       props.setInput([])
+      props.setStatus()
     }
     
     if(evt.target.id === "+") {
