@@ -20,7 +20,7 @@ const Calculator = (props) => {
     <>
       <div className={styles.wrapper}>
         <div className={styles.calculator}>
-          <Screen input={props.input} run={props.run} status={status} />
+          <Screen input={props.input} run={props.run} status={status} sym={props.sym} />
           <Keypad status={status} setStatus={setStatus} calcItems={props.calcItems} handleClick={handleClick} setCalc={props.setCalc} calc={props.calc} run={props.run} setRun={props.setRun} input={props.input} setInput={props.setInput} sym={props.sym} setSym={props.setSym} />
         </div>
       </div>

@@ -60,7 +60,7 @@ const Keypad = (props) => {
       } else {
         props.setRun([props.calc,...props.run])
       }
-      props.setInput([<>&#247;</>,props.sym, ...props.input])
+      props.setInput(["/",props.sym, ...props.input])
       props.setCalc(0)
       props.setSym(0)
     } 
